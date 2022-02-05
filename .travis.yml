@@ -7,7 +7,7 @@ before_install:
   - docker build -t varmon/testimage -f ./client/Dockerfile.dev . 
 
 script:
-  - docker run -e CI=true varmon/testimage npm run test
+  - docker run -e CI=true varmon/testimage npm test
 
 after_success:
   - docker build -t varmon/prodmulti-client ./client
