@@ -17,7 +17,7 @@ after_success:
   # Log in to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take the images and push them to docker hub
-  - docker push -t varmon/prodmulti-client
-  - docker push -t varmon/prodmulti-nginx 
-  - docker push -t varmon/prodmulti-server
-  - docker push -t varmon/prodmulti-worker  
+  - docker push varmon/prodmulti-client
+  - docker push varmon/prodmulti-nginx 
+  - docker push varmon/prodmulti-server
+  - docker push varmon/prodmulti-worker  
