@@ -10,14 +10,14 @@ script:
   - docker run -e CI=true alexvarmon/testimage npm run test
 
 after_success:
-  - docker build -t alexvarmon/prodmulti-client ./client
-  - docker build -t alexvarmon/prodmulti-nginx ./nginx
-  - docker build -t alexvarmon/prodmulti-server ./server
-  - docker build -t alexvarmon/prodmulti-worker ./worker
+  - docker build -t varmon/prodmulti-client ./client
+  - docker build -t varmon/prodmulti-nginx ./nginx
+  - docker build -t varmon/prodmulti-server ./server
+  - docker build -t varmon/prodmulti-worker ./worker
   # Log in to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take the images and push them to docker hub
-  - docker push -t alexvarmon/prodmulti-client
-  - docker push -t alexvarmon/prodmulti-nginx 
-  - docker push -t alexvarmon/prodmulti-server
-  - docker push -t alexvarmon/prodmulti-worker  
+  - docker push -t varmon/prodmulti-client
+  - docker push -t varmon/prodmulti-nginx 
+  - docker push -t varmon/prodmulti-server
+  - docker push -t varmon/prodmulti-worker  
