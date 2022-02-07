@@ -20,4 +20,16 @@ after_success:
   - docker push varmon/prodmulti-client
   - docker push varmon/prodmulti-nginx 
   - docker push varmon/prodmulti-server
-  - docker push varmon/prodmulti-worker  
+  - docker push varmon/prodmulti-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app:  multi-dockertravisci
+  env:  multidockertravisci-env
+  bucket_name: "elasticbeanstalk-us-east-2-087903820438"
+  bucket_path:  "docker-multi"
+  on:
+    branch: master
+  access_key_id:  $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY  
