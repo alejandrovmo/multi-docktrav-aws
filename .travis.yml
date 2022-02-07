@@ -28,7 +28,7 @@ deploy:
   app:  multi-dockertravisci
   env:  multidockertravisci-env
   bucket_name: "elasticbeanstalk-us-east-2-087903820438"
-  bucket_path:  "docker-multi"
+  bucket_path:  "multi-dockertravisci"
   on:
     branch: master
   access_key_id:  $AWS_ACCESS_KEY
